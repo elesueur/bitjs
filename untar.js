@@ -60,7 +60,7 @@ var TarLocalFile = function(bstream) {
   this.linkname = readCleanString(bstream, 100);
   this.maybeMagic = readCleanString(bstream, 6);
 
-  if (this.maybeMagic == "ustar") {
+  if (this.maybeMagic.trim() == "ustar") {
   	this.version = readCleanString(bstream, 2);
   	this.uname = readCleanString(bstream, 32);
   	this.gname = readCleanString(bstream, 32);
